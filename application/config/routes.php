@@ -46,11 +46,9 @@ $route['default_controller'] = "welcome";
 $route['404_override'] = '';
   */
 
-$route['news/(:any)'] = 'news/view/$1';
-$route['news'] = 'news';
-$route['(:any)'] = 'pages/view/$1';
-$route['default_controller'] = 'pages/view';
 
+$route['default_controller'] = 'form/index';
+$route['(:any)'] = 'pages/view/$1';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
