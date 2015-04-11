@@ -47,8 +47,9 @@ $route['404_override'] = '';
   */
 
 
-$route['default_controller'] = 'form/index';
-$route['(:any)'] = 'pages/view/$1';
+$route['default_controller'] = 'blog'; //系统默认的
+$route['pages/view'] = 'pages/view/$1';  //
+$route['404_override'] = ''; //报错处理页面
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
