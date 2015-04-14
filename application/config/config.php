@@ -57,7 +57,7 @@ $config['uri_protocol']	= 'AUTO';
 | http://codeigniter.com/user_guide/general/urls.html
 */
 
-$config['url_suffix'] = '';
+$config['url_suffix'] = '.html';
 
 /*
 |--------------------------------------------------------------------------
@@ -144,6 +144,7 @@ $config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-';
 | example.com?who=me&what=something&where=here
 |
 | Options are: TRUE or FALSE (boolean)
+ * 
 |
 | The other items let you set the query string 'words' that will
 | invoke your controllers and its functions:
@@ -155,7 +156,7 @@ $config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-';
 |
 */
 $config['allow_get_array']		= TRUE;
-$config['enable_query_strings'] = TRUE ; //变成 ? 分离URL和参数
+$config['enable_query_strings'] = FALSE ; //TRUE 变成 ? 分离URL和参数
 $config['controller_trigger']	= 'c';
 $config['function_trigger']		= 'm';
 $config['directory_trigger']	= 'd'; // experimental not currently in use
