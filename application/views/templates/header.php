@@ -1,7 +1,10 @@
 <html>
-<head> 
-	<title><?php echo $title ?> OrderBF</title>
-</head>
-<body>
-	<h1>Welcome to Orderbf.com</h1>
+    <head>
+        <title>
+            <?php echo $title ?> CodeIgniter 2 Tutorial
+        </title>
+    </head>
+    <body>
+        <h1>CodeIgniter 2 Tutorial</h1>
+</html>
 
