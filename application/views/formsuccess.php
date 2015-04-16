@@ -9,4 +9,4 @@
         <p><?php echo anchor('form', 'Try it again!'); ?></p>
 
     </body>
-</html>s
+</html>
