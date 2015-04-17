@@ -46,11 +46,12 @@ $route['default_controller'] = "welcome";
 $route['404_override'] = '';
   */
 
-
-//$route['default_controller'] = 'blog'; //系统默认的
-$route['blog/'] = 'blog/comments';  //
-$route['default_controller'] = 'blog'; //系统默认的
-$route['404_override'] = ''; //报错处理页面
+$route['form/insert_register'] = 'form/insert_register';
+$route['form/register'] = 'form/register';
+$route['form/about'] = 'form/about';
+$route['form/login'] = 'form/login';
+$route['default_controller'] = 'form/home';
+$route['404_override'] = 'errors/page_missing'; //报错处理页面
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
