@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="utf-8" lang="utf-8">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Home</title>
+        <title>My Form</title>
     </head>
     <style>
 
@@ -43,13 +43,13 @@
     </style>
     <body>
         <ul>
-            <li><a href = "http://localhost/index.php/form/home">Home</a></li>
+            <li><a href = "http://localhost/index.php/form/home" class="button" >Home</a></li>
             <li><a href = "http://localhost/index.php/form/contact">Contact</a></li>
             <li><a href = "http://localhost/index.php/form/about">About</a></li>
             <li><a href = "http://localhost/index.php/form/register">Register</a></li>
             <li><a href = "http://localhost/index.php/form/login">Login</a></li>
         </ul>
-        <h2>Welcome to Orderbf!</h2>
-
+        <p> 注册有误请返回重新注册 </p>
+        <li><a href="/index.php/form/home" class="button">Return Home</a></li>
     </body>
 </html>

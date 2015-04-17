@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="utf-8" lang="utf-8">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Home</title>
+        <title>My Form</title>
     </head>
     <style>
 
@@ -43,13 +43,28 @@
     </style>
     <body>
         <ul>
-            <li><a href = "http://localhost/index.php/form/home">Home</a></li>
+            <li><a href = "http://localhost/index.php/form/home" class="button" >Home</a></li>
             <li><a href = "http://localhost/index.php/form/contact">Contact</a></li>
             <li><a href = "http://localhost/index.php/form/about">About</a></li>
             <li><a href = "http://localhost/index.php/form/register">Register</a></li>
             <li><a href = "http://localhost/index.php/form/login">Login</a></li>
+
         </ul>
-        <h2>Welcome to Orderbf!</h2>
+        <?php echo validation_errors(); ?>
+
+        <?php echo form_open('form/login_verify'); ?>
+
+        <h5>Phone</h5>
+        <?php echo form_error('user_id'); ?>
+        <input type="text" name="user_id" value="<?php echo set_value('user_id'); ?>" size="50" />
+
+        <h5>Password</h5>
+        <?php echo form_error('passwd'); ?>
+        <input type="text" name="passwd" value="<?php echo set_value('passwd'); ?>" size="50" />
+
+        <div><input type="submit" value='submit' /></div>
+
+        </form>
 
     </body>
 </html>
