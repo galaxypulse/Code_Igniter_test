@@ -52,7 +52,7 @@
         </ul>
         <?php echo validation_errors(); ?>
 
-        <?php echo form_open('form/login_verify'); ?>
+        <?php echo form_open('form/login'); ?>
 
         <h5>Phone</h5>
         <?php echo form_error('user_id'); ?>
