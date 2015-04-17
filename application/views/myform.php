@@ -49,7 +49,7 @@
             <li><a href = "/index.php/form/register">Register</a></li>
             <li><a href = "http://localhost/index.php/form/login">Login</a></li>
         </ul>
-      
+
         <?php echo form_open('form/register'); ?>
 
         <h5>Phone</h5>
@@ -67,8 +67,19 @@
         <h5>Address</h5>
         <?php echo form_error('address'); ?>
         <input type="text" name="address" value="<?php echo set_value('address'); ?>" size="50" />
-        <div><input type="submit" value='submit' /></div>
 
+        <div><input type="submit" value='submit' /></div>
+        <?PHP
+        $data = array(
+            'name' => 'button',
+            'id' => 'button',
+            'value' => 'true',
+            'type' => 'reset',
+            'content' => 'Reset'
+        );
+
+        echo form_button($data);
+        ?>
         </form>
 
     </body>
