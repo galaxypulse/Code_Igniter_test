@@ -9,7 +9,7 @@ $config = array(
                                     array(
                                             'field' => 'passwd',
                                             'label' => 'Password',
-                                            'rules' => 'trim|required|matches[passconf]|md5'
+                                            'rules' => 'trim|required|matches[passconf]'
                                          ),
                                     array(
                                             'field' => 'passconf',

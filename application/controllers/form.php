@@ -48,9 +48,10 @@ class Form extends CI_Controller {
         $pwd = $this->input->post('passwd');
       
         $pwd = do_hash($pwd, 'md5');
+        echo $pwd;
       
-        $query = $this->db->get_where('users', array('user_id' => $iphone,'passwd' => $pwd));
-
+        $query = $this->db->get_where('users', array('user_id' => $iphone,'passwd' => $pwd)); 
+        //相当于 select * from users where user_id = $iphone and passwd= $pwd ;
         if ($this->form_validation->run() == FALSE  || $query->num_rows() < 1) {
             $this->load->view('pages/login');
         } else {
