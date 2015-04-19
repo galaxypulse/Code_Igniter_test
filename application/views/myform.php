@@ -52,19 +52,19 @@
 
         <?php echo form_open('form/register'); ?>
 
-        <h5>Phone</h5>
+        <h5>手机号码</h5>
         <?php echo form_error('user_id'); ?>
         <input type="text" name="user_id" value="<?php echo set_value('user_id'); ?>" size="50" />
 
-        <h5>Password</h5>
+        <h5>密码</h5>
         <?php echo form_error('passwd'); ?>
         <input type="text" name="passwd" value="<?php echo set_value('passwd'); ?>" size="50" />
 
-        <h5>Password Confirm</h5>
+        <h5>密码确认</h5>
         <?php echo form_error('passconf'); ?>
         <input type="text" name="passconf" value="<?php echo set_value('passconf'); ?>" size="50" />
 
-        <h5>Address</h5>
+        <h5>地址</h5>
         <?php echo form_error('address'); ?>
         <input type="text" name="address" value="<?php echo set_value('address'); ?>" size="50" />
 
