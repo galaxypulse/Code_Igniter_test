@@ -50,10 +50,9 @@
             <li><a href = "http://localhost/index.php/form/logout">Logout</a></li>
 
         </ul>
-        <?PHP
-        echo form_button('name', 'Logout');
-        ?>
+       
         </form>
+         <h2>Welcome to Orderbf!</h2>
 
     </body>
 </html>

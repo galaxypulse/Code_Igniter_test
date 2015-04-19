@@ -43,7 +43,7 @@
     </style>
     <body>
         <ul>
-            <li><a href = "http://localhost/index.php/form/home" class="button" >Home</a></li>
+            <li><a href = "http://localhost/index.php/form/include_logout_home" class="button" >Home</a></li>
             <li><a href = "http://localhost/index.php/form/contact">Contact</a></li>
             <li><a href = "http://localhost/index.php/form/about">About</a></li>
             <li><a href = "http://localhost/index.php/form/register">Register</a></li>
