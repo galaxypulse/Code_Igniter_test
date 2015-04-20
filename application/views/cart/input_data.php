@@ -42,27 +42,28 @@
 
     </style>
     <body>
-        <ul>
-            <li><a href = "http://localhost/index.php/form/include_logout_home" class="button" >首页</a></li>
-            <li><a href = "http://localhost/index.php/form/contact">联系方式</a></li>
-            <li><a href = "http://localhost/index.php/form/about">关于Orderbf</a></li>
-            <li><a href = "http://localhost/index.php/form/register">注册</a></li>
-            <li><a href = "http://localhost/index.php/form/login">登录</a></li>
+       
 
-        </ul>
         <?php echo validation_errors(); ?>
 
-        <?php echo form_open('form/login'); ?>
+        <?php echo form_open('form/add_cart'); ?>
 
-        <h5>手机号码</h5>
-        <?php echo form_error('user_id'); ?>
-        <input type="text" name="user_id" value="<?php echo set_value('user_id'); ?>" size="50" />
+        <h5>商品编号</h5>
+        <?php echo form_error('item_id'); ?>
+        <input type="text" name="item_id" value="<?php echo set_value('item_id'); ?>" size="30" />
 
-        <h5>密码</h5>
-        <?php echo form_error('passwd'); ?>
-        <input type="text" name="passwd" value="<?php echo set_value('passwd'); ?>" size="50" />
+         <h5>商品名称</h5>
+        <?php echo form_error('item_name'); ?>
+        <input type="text" name="item_name" value="<?php echo set_value('item_name'); ?>" size="30" />
+        
+        <h5>价格</h5>
+        <?php echo form_error('price'); ?>
+        <input type="text" name="price" value="<?php echo set_value('price'); ?>" size="50" />
 
-        <div><input type="submit" value='submit' /></div>
+        <h5>数量</h5>
+        <?php echo form_error('qty'); ?>
+        <input type="text" name="qty" value="<?php echo set_value('qty'); ?>" size="50" />
+     
 
         </form>
 

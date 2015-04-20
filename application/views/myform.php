@@ -43,11 +43,11 @@
     </style>
     <body>
         <ul>
-            <li><a href = "/index.php/form/home" class="button" >Home</a></li>
-            <li><a href = "/index.php/form/contact">Contact</a></li>
-            <li><a href = "/index.php/form/about">About</a></li>
-            <li><a href = "/index.php/form/register">Register</a></li>
-            <li><a href = "http://localhost/index.php/form/login">Login</a></li>
+            <li><a href = "/index.php/form/home" class="button" >主页</a></li>
+            <li><a href = "/index.php/form/contact">联系方式</a></li>
+            <li><a href = "/index.php/form/about">关于Orderbf</a></li>
+            <li><a href = "/index.php/form/register">注册</a></li>
+            <li><a href = "http://localhost/index.php/form/login">登录</a></li>
         </ul>
 
         <?php echo form_open('form/register'); ?>
@@ -69,6 +69,7 @@
         <input type="text" name="address" value="<?php echo set_value('address'); ?>" size="50" />
 
         <div><input type="submit" value='submit' /></div>
+         <div>  </div>
         <?PHP
         $data = array(
             'name' => 'button',

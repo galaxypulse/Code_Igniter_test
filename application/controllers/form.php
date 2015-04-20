@@ -11,6 +11,7 @@ class Form extends CI_Controller {
         $this->load->library('image_lib');
         $this->load->library('encrypt'); //加密函数和session
         $this->load->library('session');
+        $this->load->library('cart');
     }
 
     function register() {
@@ -25,6 +26,7 @@ class Form extends CI_Controller {
             $post_data['passwd'] = do_hash($this->input->post('passwd'), 'md5'); //默认是SHA1,我选择了MD5 
             // 数据库中的注册和登录验证的要以相同的方式获取，否者hash出来的东西不一样，比如用：$this->input->post('passwd')
             $this->db->insert('users', $post_data);
+
 
             $this->load->view('home'); //默认返回主页
         }
@@ -52,26 +54,30 @@ class Form extends CI_Controller {
 
         $query = $this->db->get_where('users', array('user_id' => $iphone, 'passwd' => $pwd));
         //相当于 select * from users where user_id = $iphone and passwd= $pwd ;
-        $arr_session = $this->session->all_userdata();
-        foreach ($arr_session as $key => $value) {
-            echo $key . "=>" . $value;
-            echo br();
-        }
+        /* 对session的测试
+          $arr_session = $this->session->all_userdata();
+          foreach ($arr_session as $key => $value) {
+          echo $key . "=>" . $value;
+          echo br();
+          }
+         */
         if ($this->form_validation->run() == FALSE || $query->num_rows() < 1) {
             $this->load->view('pages/login');
         } else {
             $newdata = array(
-                'username' => $iphone,
-                'logged_in' => TRUE
+                'username' => $iphone, //添加用户名到session中
+                'logged_in' => TRUE   //标记为已经登录了
             );
-            $this->session->set_userdata($newdata); //添加用户名到session中
-            $this->load->view('/log/include_logout');
+            $this->session->set_userdata($newdata);
+
+            $this->load->view('/log/include_logout'); //转到具有logout的主页
         }
     }
 
     function logout() {
+        $this->cart->destroy(); //销毁购物车
         $this->session->sess_destroy(); //销毁session
-        $this->load->view('/log/include_logout');
+        $this->load->view('home'); //返回主页
     }
 
     function login_verify() {
@@ -87,11 +93,18 @@ class Form extends CI_Controller {
 
     function home() {
         $this->load->view('home');
-        $arr_session = $this->session->all_userdata();
-        foreach ($arr_session as $key => $value) {
-            echo $key . "=>" . $value;
-            echo br();
-        }
+        /* 测试session 
+          $arr_session = $this->session->all_userdata();
+          foreach ($arr_session as $key => $value) {
+          echo $key . "=>" . $value;
+          echo br();
+          }
+         */
+    }
+
+    function include_logout_home() {
+        $this->load->view('/log/include_logout');
+        
     }
 
     function about() {
@@ -100,6 +113,46 @@ class Form extends CI_Controller {
 
     function contact() {
         $this->load->view('contact');
+    }
+
+    function  add_cart(){
+          $post_data = array(//获取数据
+                'id' => $this->input->post('item_id'),
+                'name' => $this->input->post('item_name'),
+                'price' => $this->input->post('price'),
+                'qty' => $this->input->post('qty')
+            );
+            $this->cart->insert($post_data);
+        echo $this->cart->total_items();
+        echo br();
+        echo $this->cart->total();
+        echo br();
+
+        $this->load->view('view_cart');
+    }
+   function cart_buy() {
+        
+        $data = array(
+            array(
+                'id' => '100',
+                'qty' => 1,
+                'price' => 39.95,
+                'name' => 'bread'
+            ),
+            array(
+                'id' => '101',
+                'qty' => 1,
+                'price' => 29.95,
+                'name' => 'milk'
+            )
+        );
+        $this->cart->insert($data);
+        echo $this->cart->total_items();
+        echo br();
+        echo $this->cart->total();
+        echo br();
+
+        $this->load->view('view_cart');
     }
 
 }

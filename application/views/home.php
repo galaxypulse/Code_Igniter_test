@@ -43,11 +43,11 @@
     </style>
     <body>
         <ul>
-            <li><a href = "http://localhost/index.php/form/home">Home</a></li>
-            <li><a href = "http://localhost/index.php/form/contact">Contact</a></li>
-            <li><a href = "http://localhost/index.php/form/about">About</a></li>
-            <li><a href = "http://localhost/index.php/form/register">Register</a></li>
-            <li><a href = "http://localhost/index.php/form/login">Login</a></li>
+            <li><a href = "http://localhost/index.php/form/home">主页</a></li>
+            <li><a href = "http://localhost/index.php/form/contact">联系方式</a></li>
+            <li><a href = "http://localhost/index.php/form/about">关于Orderbf</a></li>
+            <li><a href = "http://localhost/index.php/form/register">注册</a></li>
+            <li><a href = "http://localhost/index.php/form/login">登录</a></li>
         </ul>
         <h2>Welcome to Orderbf!</h2>
 
